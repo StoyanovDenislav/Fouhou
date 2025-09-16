@@ -12,10 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2540d806be4694f80027ed893bd6da, type: 3}
   m_Name: Stage1
   m_EditorClassIdentifier: Assembly-CSharp::StageSequence
-  entries:
-  - pattern: {fileID: 11400000, guid: edafd1c3d460f814bb4e48d3466d1669, type: 2}
-    duration: 5
-    startDelay: 0
-  - pattern: {fileID: 11400000, guid: 713d1b0e9d4f109488babadb125e41bf, type: 2}
-    duration: 5
-    startDelay: 5
+  patternGroups:
+  - patterns:
+    - pattern: {fileID: 11400000, guid: 713d1b0e9d4f109488babadb125e41bf, type: 2}
+      duration: 5
+      startDelay: 0
+    showDialogue: 1
+    dialogue: {fileID: 11400000, guid: 99dc749091cb2d54eb473f0afe1e15f2, type: 2}
+    groupDelay: 0
+  - patterns:
+    - pattern: {fileID: 11400000, guid: 713d1b0e9d4f109488babadb125e41bf, type: 2}
+      duration: 5
+      startDelay: 0
+    - pattern: {fileID: 11400000, guid: edafd1c3d460f814bb4e48d3466d1669, type: 2}
+      duration: 5
+      startDelay: 0
+    showDialogue: 1
+    dialogue: {fileID: 11400000, guid: 99dc749091cb2d54eb473f0afe1e15f2, type: 2}
+    groupDelay: 0

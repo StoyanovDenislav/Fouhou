@@ -8,6 +8,7 @@ public abstract class ObstaclePattern : ScriptableObject
     public float speed;
     public float rotationSpeed;
     public float petals;// Seconds between shots
+    
 
     public abstract void Fire(Transform origin, BulletPool pool, float time);
 }

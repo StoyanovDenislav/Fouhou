@@ -1,13 +1,14 @@
- using UnityEngine;
+using UnityEngine;
 
 public class HeartMechanics : MonoBehaviour
 {
     [SerializeField] private float health;
     [SerializeField] private float maxHealth;
     private float timeToExpireShield;
-    private bool hasShield ;
+    private bool hasShield;
     private SpriteRenderer sr;
     private float alpha;
+
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -17,7 +18,18 @@ public class HeartMechanics : MonoBehaviour
     {
         GameObject obstacleGameObject = collision.gameObject;
         
-        Destroy(obstacleGameObject);
+        // Get the Obstacle component to access the BulletPool reference
+        Obstacle obstacle = obstacleGameObject.GetComponent<Obstacle>();
+        if (obstacle != null && obstacle.bulletPool != null)
+        {
+            // Use the pool's Despawn method instead of Destroy
+            obstacle.bulletPool.Despawn(obstacleGameObject);
+        }
+        else
+        {
+            // Fallback to Destroy if no pool reference found
+            Destroy(obstacleGameObject);
+        }
         
         if (sr != null)
         {
@@ -52,7 +64,7 @@ public class HeartMechanics : MonoBehaviour
     {
        Obstacle obstacleScript = bullet.gameObject.GetComponent<Obstacle>();
         
-        if (obstacleScript ==null)
+        if (obstacleScript == null)
         {
             Debug.LogWarning("No object found");
             return;
@@ -60,7 +72,7 @@ public class HeartMechanics : MonoBehaviour
 
         unsafe
         {
-            // pin health in memory so GC won’t move it
+            // pin health in memory so GC won't move it
             fixed (float* pHealth = &health)
             {
                 if (hasShield) HeartMechanicsFunctions.TakeDamage(0, pHealth);
@@ -69,13 +81,9 @@ public class HeartMechanics : MonoBehaviour
                     HeartMechanicsFunctions.TakeDamage(obstacleScript.Damage, pHealth);
                     hasShield = Shield(bullet);
                 }
-
-                
             }
         }
     }
-    
-    
 }
 
 static class HeartMechanicsFunctions
@@ -88,6 +96,5 @@ static class HeartMechanicsFunctions
         {
             *currentHealthPtr = 0;
         }
-                    
     }
 }

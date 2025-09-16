@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38922d22752cfad4dbe3ff4c9a78dd9e, type: 3}
   m_Name: RotatingFlower
   m_EditorClassIdentifier: Assembly-CSharp::RotatingFlowerPattern
-  fireRate: 0.3
+  fireRate: 0.2
   sprite: {fileID: 8618663976898325987, guid: e9e6dc2f5891a4c47a32e1d1a19fc149, type: 3}
   damage: 1
-  speed: 0.8
+  speed: 1.2
   rotationSpeed: 360
   petals: 9
