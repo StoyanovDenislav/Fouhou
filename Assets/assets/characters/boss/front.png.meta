@@ -5,24 +5,6 @@ TextureImporter:
   - first:
       213: -2690792559708188323
     second: front_0
-  - first:
-      213: 9207541054723020084
-    second: front_1
-  - first:
-      213: 4333283870218021683
-    second: front_2
-  - first:
-      213: -204359854808501785
-    second: front_3
-  - first:
-      213: 2622741462206141062
-    second: front_4
-  - first:
-      213: -143640507430623617
-    second: front_5
-  - first:
-      213: 5985239058471163646
-    second: front_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -134,10 +116,10 @@ TextureImporter:
       name: front_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 575
-        width: 338
-        height: 434
+        x: 65
+        y: 16
+        width: 901
+        height: 1003
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,138 +130,6 @@ TextureImporter:
       bones: []
       spriteID: d5154526c6268aad0800000000000000
       internalID: -2690792559708188323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: front_1
-      rect:
-        serializedVersion: 2
-        x: 338
-        y: 784
-        width: 77
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 435579d3ec1c7cf70800000000000000
-      internalID: 9207541054723020084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: front_2
-      rect:
-        serializedVersion: 2
-        x: 351
-        y: 575
-        width: 336
-        height: 434
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 33b6643a8bae22c30800000000000000
-      internalID: 4333283870218021683
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: front_3
-      rect:
-        serializedVersion: 2
-        x: 679
-        y: 577
-        width: 345
-        height: 432
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7e1f9c77bc7f92df0800000000000000
-      internalID: -204359854808501785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: front_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 100
-        width: 347
-        height: 445
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6825c78c679d56420800000000000000
-      internalID: 2622741462206141062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: front_5
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 96
-        width: 352
-        height: 449
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f76ad3338bfa10ef0800000000000000
-      internalID: -143640507430623617
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: front_6
-      rect:
-        serializedVersion: 2
-        x: 679
-        y: 95
-        width: 345
-        height: 450
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ef697f76637df0350800000000000000
-      internalID: 5985239058471163646
       vertices: []
       indices: 
       edges: []
@@ -299,12 +149,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       front_0: -2690792559708188323
-      front_1: 9207541054723020084
-      front_2: 4333283870218021683
-      front_3: -204359854808501785
-      front_4: 2622741462206141062
-      front_5: -143640507430623617
-      front_6: 5985239058471163646
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

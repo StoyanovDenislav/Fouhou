@@ -21,6 +21,9 @@ public class StageSpawner : MonoBehaviour
     private float groupDelayTimer = 0f;
     private int lastProcessedDialogueGroup = -1; // Track which group's dialogue we've processed
 
+    // Game completion tracking
+    private bool gameCompleted = false;
+
     private DialogueManager dialogueManager;
 
     private class RunningPattern
@@ -45,7 +48,7 @@ public class StageSpawner : MonoBehaviour
 
     void Update()
     {
-        if (stageEnded) return;
+        if (stageEnded || gameCompleted) return;
         if (stageSequences == null || stageSequences.Length == 0) return;
 
         StageSequence currentSequence = stageSequences[currentStageIndex];
@@ -126,6 +129,12 @@ public class StageSpawner : MonoBehaviour
             {
                 running.RemoveAt(i);
                 Debug.Log($"✅ Pattern {rp.patternIndex} from group {rp.groupIndex} finished");
+                
+                // Notify ScoreManager about pattern completion
+                if (ScoreManager.Instance != null)
+                {
+                    ScoreManager.Instance.OnPatternCompleted(currentStageIndex, rp.groupIndex, rp.patternIndex);
+                }
             }
         }
 
@@ -140,6 +149,13 @@ public class StageSpawner : MonoBehaviour
         {
             stageClearTriggered = true;
             lastBulletTime = Time.time;
+            
+            // Notify ScoreManager that all groups in this stage are complete
+            if (ScoreManager.Instance != null)
+            {
+                bool isLastStage = (currentStageIndex >= stageSequences.Length - 1);
+                ScoreManager.Instance.OnAllGroupsCompleted(currentStageIndex, isLastStage);
+            }
         }
 
         // ✅ Only end the stage after safeMargin has passed
@@ -157,6 +173,12 @@ public class StageSpawner : MonoBehaviour
         StageSequence.PatternGroup currentGroup = currentSequence.patternGroups[nextGroupIndex];
         
         Debug.Log($"🎯 Starting group {nextGroupIndex} with {currentGroup.patterns.Length} patterns");
+
+        // Notify ScoreManager about group start
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.OnGroupStarted(currentStageIndex, nextGroupIndex);
+        }
 
         // Apply group delay if needed
         if (currentGroup.groupDelay > 0f)
@@ -207,6 +229,14 @@ public class StageSpawner : MonoBehaviour
         {
             StageSequence.PatternGroup finishedGroup = currentSequence.patternGroups[finishedGroupIndex];
             
+            // Notify ScoreManager about group completion
+            if (ScoreManager.Instance != null)
+            {
+                bool isLastStage = (currentStageIndex >= stageSequences.Length - 1);
+                bool isLastGroup = (finishedGroupIndex >= currentSequence.patternGroups.Length - 1);
+                ScoreManager.Instance.OnGroupCompleted(currentStageIndex, finishedGroupIndex, isLastStage, isLastGroup);
+            }
+            
             if (finishedGroup.showDialogue && finishedGroup.dialogue != null)
             {
                 pendingDialogue = finishedGroup.dialogue;
@@ -243,7 +273,13 @@ public class StageSpawner : MonoBehaviour
         if (index >= stageSequences.Length)
         {
             Debug.Log("🎉 All stages completed!");
-            stageEnded = true;
+            gameCompleted = true;
+            
+            // Notify ScoreManager that the entire game is completed
+            if (ScoreManager.Instance != null)
+            {
+                ScoreManager.Instance.OnGameCompleted();
+            }
             return;
         }
 
@@ -258,6 +294,12 @@ public class StageSpawner : MonoBehaviour
         lastProcessedDialogueGroup = -1; // Reset dialogue tracking
         pendingDialogue = null;
         groupDelayTimer = 0f;
+        
+        // Notify ScoreManager about stage start
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.OnStageStarted(index);
+        }
     }
 
     public void EndStage()
@@ -284,4 +326,13 @@ public class StageSpawner : MonoBehaviour
         stageEnded = false;
         LoadStage(currentStageIndex + 1);
     }
+    
+    // Public getters for ScoreManager
+    public int GetCurrentStageIndex() => currentStageIndex;
+    public int GetTotalStages() => stageSequences?.Length ?? 0;
+    public int GetCurrentGroupIndex() => nextGroupIndex - 1; // -1 because we increment after starting
+    public int GetTotalGroupsInCurrentStage() => 
+        (stageSequences != null && currentStageIndex < stageSequences.Length) 
+            ? stageSequences[currentStageIndex].patternGroups.Length 
+            : 0;
 }
