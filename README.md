@@ -152,6 +152,8 @@ This is a university project, but feedback and suggestions are welcome! Feel fre
 
 This project is for educational purposes. All original Touhou-related concepts and inspiration belong to their respective creators.
 
+(This project's assests are AI generated. This project is an abomination. Please, play the real Touhou games, where talanted people have put a lot of effort)
+
 ---
 
 <div align="center">
