@@ -144,7 +144,7 @@ This is a university project, but feedback and suggestions are welcome! Feel fre
 
 ## 🙏 Acknowledgments
 
-- **Team Shangai Alice** - For creating the incredible Touhou series that inspired this project
+- **Team Shanghai Alice** - For creating the incredible Touhou series that inspired this project
 - **Unity Technologies** - For the amazing game engine
 - **University Community** - For support and feedback during development
 
