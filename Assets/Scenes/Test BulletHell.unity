@@ -277,6 +277,14 @@ PrefabInstance:
       propertyPath: obstaclePrefab
       value: 
       objectReference: {fileID: 1793977797}
+    - target: {fileID: 832116517700859758, guid: a316cf52a331b2e48aa044b9346c6d74, type: 3}
+      propertyPath: stageSequences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 832116517700859758, guid: a316cf52a331b2e48aa044b9346c6d74, type: 3}
+      propertyPath: 'stageSequences.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7f7114307bdb64c45809c8421d0de7c4, type: 2}
     - target: {fileID: 1714177616481967641, guid: a316cf52a331b2e48aa044b9346c6d74, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.22347

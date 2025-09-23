@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38922d22752cfad4dbe3ff4c9a78dd9e, type: 3}
-  m_Name: RotatingFlowerReverse
-  m_EditorClassIdentifier: Assembly-CSharp::RotatingFlowerPattern
+  m_Script: {fileID: 11500000, guid: 580d321af6037d74bbe42a99c57ea3ea, type: 3}
+  m_Name: SpiralStream
+  m_EditorClassIdentifier: Assembly-CSharp::SpiralStreamPattern
   fireRate: 0.1
-  sprite: {fileID: 460048964641387130, guid: e9e6dc2f5891a4c47a32e1d1a19fc149, type: 3}
+  sprite: {fileID: -4565174975135584980, guid: e9e6dc2f5891a4c47a32e1d1a19fc149, type: 3}
   damage: 1
-  speed: 10
+  speed: 1
   rotationSpeed: 360
-  petals: 4
+  petals: 2
+  arms: 1

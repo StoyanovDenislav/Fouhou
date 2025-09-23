@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2540d806be4694f80027ed893bd6da, type: 3}
+  m_Name: Stage2
+  m_EditorClassIdentifier: Assembly-CSharp::StageSequence
+  preStageScripts: []
+  patternGroups:
+  - patterns:
+    - pattern: {fileID: 11400000, guid: 713d1b0e9d4f109488babadb125e41bf, type: 2}
+      duration: 10
+      startDelay: 0
+    - pattern: {fileID: 11400000, guid: a46297097c3570147a816179476e83bc, type: 2}
+      duration: 25
+      startDelay: 0
+    - pattern: {fileID: 11400000, guid: cab3905f32fa6e04ba119d6cb5f4c422, type: 2}
+      duration: 15
+      startDelay: 10
+    showDialogue: 1
+    dialogue: {fileID: 11400000, guid: 99dc749091cb2d54eb473f0afe1e15f2, type: 2}
+    groupDelay: 5
+  - patterns:
+    - pattern: {fileID: 11400000, guid: 713d1b0e9d4f109488babadb125e41bf, type: 2}
+      duration: 5
+      startDelay: 0
+    - pattern: {fileID: 11400000, guid: 823e4a39576b8c842bf09b61ad244bfd, type: 2}
+      duration: 15
+      startDelay: 0
+    - pattern: {fileID: 11400000, guid: 713d1b0e9d4f109488babadb125e41bf, type: 2}
+      duration: 10
+      startDelay: 20
+    - pattern: {fileID: 11400000, guid: 1d68c5a0b3b1e424093e7865e66638f3, type: 2}
+      duration: 10
+      startDelay: 20
+    - pattern: {fileID: 11400000, guid: 6d21d86dc22c21d4e842baabd267150d, type: 2}
+      duration: 5
+      startDelay: 20
+    showDialogue: 1
+    dialogue: {fileID: 11400000, guid: 99dc749091cb2d54eb473f0afe1e15f2, type: 2}
+    groupDelay: 2
+  postStageScripts:
+  - {fileID: 11400000, guid: ec498ee11818129438e176a288e56be0, type: 2}
+  stageMusic: {fileID: 8300000, guid: e5a9dd81f7768c4479f40579573f0c4d, type: 3}
+  musicVolume: 0.7
+  loopMusic: 1
+  fadeInDuration: 2
+  fadeOutDuration: 1.5

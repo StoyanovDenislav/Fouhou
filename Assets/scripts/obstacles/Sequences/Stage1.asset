@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2540d806be4694f80027ed893bd6da, type: 3}
   m_Name: Stage1
   m_EditorClassIdentifier: Assembly-CSharp::StageSequence
+  preStageScripts:
+  - {fileID: 11400000, guid: 3c610c4a87bd9ae46a07b363944cd3a1, type: 2}
   patternGroups:
   - patterns:
     - pattern: {fileID: 11400000, guid: 713d1b0e9d4f109488babadb125e41bf, type: 2}
@@ -24,9 +26,14 @@ MonoBehaviour:
     - pattern: {fileID: 11400000, guid: 713d1b0e9d4f109488babadb125e41bf, type: 2}
       duration: 5
       startDelay: 0
-    - pattern: {fileID: 11400000, guid: edafd1c3d460f814bb4e48d3466d1669, type: 2}
+    - pattern: {fileID: 11400000, guid: 1d68c5a0b3b1e424093e7865e66638f3, type: 2}
       duration: 5
       startDelay: 0
     showDialogue: 1
     dialogue: {fileID: 11400000, guid: 99dc749091cb2d54eb473f0afe1e15f2, type: 2}
     groupDelay: 0
+  stageMusic: {fileID: 8300000, guid: 1527091261ab58443b0121fbdf2cd25e, type: 3}
+  musicVolume: 0.7
+  loopMusic: 1
+  fadeInDuration: 2
+  fadeOutDuration: 1.5

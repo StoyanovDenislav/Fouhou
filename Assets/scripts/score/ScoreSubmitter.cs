@@ -41,15 +41,10 @@ public class ScoreSubmitter : MonoBehaviour
     public string gameID = "bullet-hell-v1";
     
     private string currentUserID;
-    private string currentUsername;
-    
+
     void Start()
     {
-        // Generate or get user ID (you might want to save this persistently)
         currentUserID = SystemInfo.deviceUniqueIdentifier;
-        currentUsername = "Player_" + UnityEngine.Random.Range(1000, 9999);
-        
-        Debug.Log($"Player initialized: {currentUsername} ({currentUserID})");
     }
     
     public void SubmitScore(int score)
@@ -59,12 +54,16 @@ public class ScoreSubmitter : MonoBehaviour
     
     private IEnumerator SubmitScoreCoroutine(int score)
     {
+        string username = UsernameService.HasUsername
+            ? UsernameService.Username
+            : UsernameService.GetSuggestion(); // Fallback (shouldn't happen if we gate correctly)
+
         ScoreSubmissionData submissionData = new ScoreSubmissionData
         {
             gameID = gameID,
             score = score,
             userID = currentUserID,
-            username = currentUsername
+            username = username
         };
         
         string jsonData = JsonUtility.ToJson(submissionData);
@@ -76,7 +75,7 @@ public class ScoreSubmitter : MonoBehaviour
             request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "application/json");
             
-            Debug.Log($"Submitting score: {score} for {currentUsername}");
+            Debug.Log($"Submitting score: {score} for {username}");
             
             yield return request.SendWebRequest();
             
@@ -85,18 +84,15 @@ public class ScoreSubmitter : MonoBehaviour
                 string responseText = request.downloadHandler.text;
                 ScoreResponse response = JsonUtility.FromJson<ScoreResponse>(responseText);
                 
-                if (response.success)
+                if (response != null && response.success)
                 {
-                    Debug.Log($"✅ Score submitted successfully!");
-                    Debug.Log($"🏆 Ranking: #{response.data.ranking}");
-                    Debug.Log($"📊 Score: {response.data.score:N0}");
-                    
-                    // Notify UI or other systems
+                    Debug.Log($"✅ Score submitted successfully! Rank: #{response.data.ranking} Score: {response.data.score:N0}");
                     OnScoreSubmitted(response.data);
                 }
                 else
                 {
-                    Debug.LogError($"❌ Score submission failed: {response.message}");
+                    string msg = (response != null) ? response.message : "Invalid server response";
+                    Debug.LogError($"❌ Score submission failed: {msg}");
                 }
             }
             else
@@ -109,12 +105,8 @@ public class ScoreSubmitter : MonoBehaviour
     
     private void OnScoreSubmitted(ScoreData scoreData)
     {
-        // Handle successful score submission
-        // Update UI, show ranking, etc.
-        
         if (ScoreManager.Instance != null)
         {
-            // You could add a method to ScoreManager to handle this
             Debug.Log($"Score submitted! Rank: {scoreData.ranking}");
         }
     }
@@ -129,7 +121,6 @@ public class ScoreSubmitter : MonoBehaviour
         }
     }
     
-    // Test method you can call from inspector
     [ContextMenu("Test Score Submission")]
     public void TestSubmission()
     {

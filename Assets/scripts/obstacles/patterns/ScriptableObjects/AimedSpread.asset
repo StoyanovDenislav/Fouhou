@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 695f253abbda5ef47b5dc57411988182, type: 3}
+  m_Name: AimedSpread
+  m_EditorClassIdentifier: Assembly-CSharp::AimedSpreadPattern
+  fireRate: 0.7
+  sprite: {fileID: 5053354582490243744, guid: e9e6dc2f5891a4c47a32e1d1a19fc149, type: 3}
+  damage: 1
+  speed: 1
+  rotationSpeed: 360
+  petals: 2
+  targetTag: Player
+  bullets: 5
+  totalSpread: 25
