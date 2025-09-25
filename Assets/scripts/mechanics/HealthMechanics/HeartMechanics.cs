@@ -14,6 +14,7 @@ public class HeartMechanics : MonoBehaviour
     [SerializeField] private AudioClip damageSound;
     [Range(0f, 1f)]
     [SerializeField] private float damageVolume = 0.7f;
+    
 
     private void Awake()
     {
@@ -145,6 +146,8 @@ static class HeartMechanicsFunctions
     public static unsafe void TakeDamage(float damage, float* currentHealthPtr)
     {
         *currentHealthPtr -= damage;
+
+        ScoreManager.Instance.hitTimes++;
         
         if (*currentHealthPtr <= 0)
         {

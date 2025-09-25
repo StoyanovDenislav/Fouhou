@@ -10,24 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8407d2bb1aa99bc41b1580ad88bc7cdb, type: 3}
-  m_Name: Dialogue1
+  m_Name: Dialogue2
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   lines:
   - speakerName: Lyra
-    text: "This forest feels alive\u2026 and it doesn\u2019t like me here."
+    text: You again. I thought the forest had swallowed your flames.
     portrait: {fileID: -8030570891474961867, guid: 26a2fe74e64cab4469e671427796c401, type: 3}
   - speakerName: Ashen
-    text: "That\u2019s because you carry a flame that doesn\u2019t belong to you."
+    text: "You survived the first trial. Impressive\u2026 but the flame still rejects
+      you."
     portrait: {fileID: -8030570891474961867, guid: a520c24396b8a9744a637ef1a4809e9f, type: 3}
   - speakerName: Lyra
-    text: "Belong? Fire doesn\u2019t belong to anyone. It burns where it pleases."
+    text: "Rejects me? It\u2019s burning brighter than ever."
     portrait: {fileID: -8030570891474961867, guid: 26a2fe74e64cab4469e671427796c401, type: 3}
   - speakerName: Ashen
-    text: Foolish girl. Fire remembers its masters. And it remembers betrayal.
+    text: That brightness is hunger. It will consume you as it consumed me.
     portrait: {fileID: -8030570891474961867, guid: a520c24396b8a9744a637ef1a4809e9f, type: 3}
   - speakerName: Lyra
-    text: "Then let it remember me as the one who won\u2019t bow. "
+    text: "Then I\u2019ll master it before it masters me."
     portrait: {fileID: -8030570891474961867, guid: 26a2fe74e64cab4469e671427796c401, type: 3}
   - speakerName: Ashen
-    text: Very well. Let the forest witness your trial.
+    text: "Bold words. But fire doesn\u2019t serve \u2014 it devours."
     portrait: {fileID: -8030570891474961867, guid: a520c24396b8a9744a637ef1a4809e9f, type: 3}
+  - speakerName: Lyra
+    text: "Then let\u2019s see who it devours first."
+    portrait: {fileID: -8030570891474961867, guid: 26a2fe74e64cab4469e671427796c401, type: 3}

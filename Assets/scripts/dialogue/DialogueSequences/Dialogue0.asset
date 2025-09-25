@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8407d2bb1aa99bc41b1580ad88bc7cdb, type: 3}
+  m_Name: Dialogue0
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
+  lines:
+  - speakerName: Denislav
+    text: Hi!
+    portrait: {fileID: 7402632021660720041, guid: d39f9e37e44ebdb4ca334475f373a71a, type: 3}
+  - speakerName: Denislav
+    text: Welcome to Fouhou!
+    portrait: {fileID: 7402632021660720041, guid: d39f9e37e44ebdb4ca334475f373a71a, type: 3}
+  - speakerName: Denislav
+    text: I will be very brief! I will give you a quick run down of the controls
+    portrait: {fileID: 7402632021660720041, guid: d39f9e37e44ebdb4ca334475f373a71a, type: 3}
+  - speakerName: Denislav
+    text: W or up arrow to go up
+    portrait: {fileID: 7402632021660720041, guid: d39f9e37e44ebdb4ca334475f373a71a, type: 3}
+  - speakerName: Denislav
+    text: S or down arrow to go down
+    portrait: {fileID: 7402632021660720041, guid: d39f9e37e44ebdb4ca334475f373a71a, type: 3}
+  - speakerName: Denislav
+    text: A or left arrow to go left
+    portrait: {fileID: 7402632021660720041, guid: d39f9e37e44ebdb4ca334475f373a71a, type: 3}
+  - speakerName: Denislav
+    text: D or right arrow to go right
+    portrait: {fileID: 7402632021660720041, guid: d39f9e37e44ebdb4ca334475f373a71a, type: 3}
+  - speakerName: Denislav
+    text: And don't get hit, that's the most important!
+    portrait: {fileID: 7402632021660720041, guid: d39f9e37e44ebdb4ca334475f373a71a, type: 3}
+  - speakerName: Denislav
+    text: Enough yapping from me, have fun!
+    portrait: {fileID: 7402632021660720041, guid: d39f9e37e44ebdb4ca334475f373a71a, type: 3}
+  - speakerName: Denislav
+    text: (and don't forget to vote me as the best game)
+    portrait: {fileID: 7402632021660720041, guid: d39f9e37e44ebdb4ca334475f373a71a, type: 3}

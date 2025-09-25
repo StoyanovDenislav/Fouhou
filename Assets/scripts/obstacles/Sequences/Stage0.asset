@@ -12,16 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f2540d806be4694f80027ed893bd6da, type: 3}
   m_Name: Stage0
   m_EditorClassIdentifier: Assembly-CSharp::StageSequence
+  preStageScripts: []
   patternGroups:
   - patterns: []
     showDialogue: 1
-    dialogue: {fileID: 11400000, guid: 99dc749091cb2d54eb473f0afe1e15f2, type: 2}
+    dialogue: {fileID: 11400000, guid: fdc363cd47ca0ba459b0cfd2233a8f9f, type: 2}
     groupDelay: 0
   - patterns: []
     showDialogue: 1
     dialogue: {fileID: 11400000, guid: 99dc749091cb2d54eb473f0afe1e15f2, type: 2}
     groupDelay: 0
-  stageMusic: {fileID: 8300000, guid: 1527091261ab58443b0121fbdf2cd25e, type: 3}
+  postStageScripts: []
+  stageMusic: {fileID: 8300000, guid: 79adee678f207ac43a54803f51a4db9c, type: 3}
   musicVolume: 0.7
   loopMusic: 1
   fadeInDuration: 2

@@ -57,11 +57,7 @@ public class DialogueManager : MonoBehaviour
                 NextLine();
             }
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            EndDialogue();
-        }
+        
     }
 
     public void StartDialogue(DialogueSequence sequence)
@@ -176,4 +172,5 @@ public class DialogueManager : MonoBehaviour
     }
 
     public bool IsActive() => active;
+    public void SkipDialogue() => EndDialogue();
 }

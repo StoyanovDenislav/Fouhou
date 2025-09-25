@@ -10,24 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8407d2bb1aa99bc41b1580ad88bc7cdb, type: 3}
-  m_Name: Dialogue1
+  m_Name: Dialogue3
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSequence
   lines:
-  - speakerName: Lyra
-    text: "This forest feels alive\u2026 and it doesn\u2019t like me here."
-    portrait: {fileID: -8030570891474961867, guid: 26a2fe74e64cab4469e671427796c401, type: 3}
   - speakerName: Ashen
-    text: "That\u2019s because you carry a flame that doesn\u2019t belong to you."
+    text: "You\u2019ve grown stronger\u2026 but strength alone won\u2019t tame the
+      flame."
     portrait: {fileID: -8030570891474961867, guid: a520c24396b8a9744a637ef1a4809e9f, type: 3}
   - speakerName: Lyra
-    text: "Belong? Fire doesn\u2019t belong to anyone. It burns where it pleases."
+    text: "I don\u2019t want to tame it. I want to carry it."
     portrait: {fileID: -8030570891474961867, guid: 26a2fe74e64cab4469e671427796c401, type: 3}
   - speakerName: Ashen
-    text: Foolish girl. Fire remembers its masters. And it remembers betrayal.
+    text: Then it will consume you, as it consumed me.
     portrait: {fileID: -8030570891474961867, guid: a520c24396b8a9744a637ef1a4809e9f, type: 3}
   - speakerName: Lyra
-    text: "Then let it remember me as the one who won\u2019t bow. "
+    text: "Maybe. But I\u2019ll burn on my own terms."
     portrait: {fileID: -8030570891474961867, guid: 26a2fe74e64cab4469e671427796c401, type: 3}
   - speakerName: Ashen
-    text: Very well. Let the forest witness your trial.
+    text: "Bold words\u2026 we\u2019ll see if they last. The forest will call me
+      again."
     portrait: {fileID: -8030570891474961867, guid: a520c24396b8a9744a637ef1a4809e9f, type: 3}
+  - speakerName: Lyra
+    text: "And when it does, I\u2019ll be ready."
+    portrait: {fileID: -8030570891474961867, guid: 26a2fe74e64cab4469e671427796c401, type: 3}
