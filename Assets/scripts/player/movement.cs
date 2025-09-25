@@ -8,6 +8,7 @@ public class movement : MonoBehaviour
     
     [Header("Boundary Settings")]
     public bool usePlayAreaBounds = true;
+    public bool enableBoundaryClamp = true; // NEW: Can be disabled during animations
     
     // Fallback bounds if PlayAreaBounds is not available
     [Header("Fallback Bounds (if PlayAreaBounds not found)")]
@@ -45,13 +46,13 @@ public class movement : MonoBehaviour
             newPosition += Vector3.down * speed * Time.deltaTime;
         }
         
-        // Clamp position to bounds
-        if (usePlayAreaBounds)
+        // Only clamp position to bounds if boundary clamping is enabled
+        if (usePlayAreaBounds && enableBoundaryClamp)
         {
             newPosition = ClampToPlayArea(newPosition);
         }
         
-        // Apply the clamped position
+        // Apply the position
         playerTransform.position = newPosition;
     }
     
@@ -73,5 +74,22 @@ public class movement : MonoBehaviour
         }
         
         return position;
+    }
+    
+    // NEW: Public methods to control boundary clamping
+    public void EnableBoundaryClamp(bool enable)
+    {
+        enableBoundaryClamp = enable;
+        Debug.Log($"Boundary clamping {(enable ? "enabled" : "disabled")}");
+    }
+    
+    public void DisableBoundaryClampTemporarily()
+    {
+        enableBoundaryClamp = false;
+    }
+    
+    public void EnableBoundaryClamp()
+    {
+        enableBoundaryClamp = true;
     }
 }

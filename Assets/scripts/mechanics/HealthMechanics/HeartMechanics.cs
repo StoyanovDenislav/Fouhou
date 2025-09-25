@@ -59,7 +59,7 @@ public class HeartMechanics : MonoBehaviour
             sr.color = c;
         }
         
-        timeToExpireShield = Time.time + 2f;
+        timeToExpireShield = Time.time + .5f;
         
         return true;
     }

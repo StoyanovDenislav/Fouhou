@@ -7,26 +7,29 @@ public class EntranceAnimationScript : StageScript
     [Header("Player Entrance")]
     public bool animatePlayer = true;
     public string playerTag = "Player";
-    public Vector3 playerStartOffset = new Vector3(0, -10, 0); // Start position relative to final position
-    public Vector3 playerFinalPosition = new Vector3(0, -4, 0); // Where player should end up
+    public Vector3 playerStartOffset = new Vector3(0, -10, 0);
+    public Vector3 playerFinalPosition = new Vector3(0, -4, 0);
     public float playerAnimationDuration = 2f;
     public AnimationCurve playerEaseCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     
     [Header("Enemy Entrance")]
     public bool animateEnemy = true;
     public string enemyTag = "Enemy";
-    public Vector3 enemyStartOffset = new Vector3(0, 10, 0); // Start position relative to final position
-    public Vector3 enemyFinalPosition = new Vector3(0, 4, 0); // Where enemy should end up
+    public Vector3 enemyStartOffset = new Vector3(0, 10, 0);
+    public Vector3 enemyFinalPosition = new Vector3(0, 4, 0);
     public float enemyAnimationDuration = 2f;
     public AnimationCurve enemyEaseCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     
     [Header("Timing")]
-    public float delayBetweenAnimations = 0.5f; // Delay between enemy and player animations
-    public bool enemyFirst = true; // If true, enemy animates first, then player
+    public float delayBetweenAnimations = 0.5f;
+    public bool enemyFirst = true;
+    
+    [Header("Boundary Control")]
+    public bool disableBoundaryClampDuringAnimation = true; // NEW
     
     [Header("Fallback")]
-    public GameObject playerPrefab; // Fallback if no player found in scene
-    public GameObject enemyPrefab; // Fallback if no enemy found in scene
+    public GameObject playerPrefab;
+    public GameObject enemyPrefab;
     
     public override IEnumerator Execute(StageSpawner stageSpawner, int stageIndex)
     {
@@ -35,6 +38,18 @@ public class EntranceAnimationScript : StageScript
         // Find or create player and enemy
         GameObject player = FindOrCreateGameObject(playerTag, playerPrefab, "Player");
         GameObject enemy = FindOrCreateGameObject(enemyTag, enemyPrefab, "Enemy");
+        
+        // NEW: Disable boundary clamping during animation
+        movement playerMovement = null;
+        if (disableBoundaryClampDuringAnimation && player != null)
+        {
+            playerMovement = player.GetComponent<movement>();
+            if (playerMovement != null)
+            {
+                playerMovement.DisableBoundaryClampTemporarily();
+                Debug.Log("🚫 Boundary clamping disabled for entrance animation");
+            }
+        }
         
         if (enemyFirst)
         {
@@ -67,17 +82,22 @@ public class EntranceAnimationScript : StageScript
             }
         }
         
+        // NEW: Re-enable boundary clamping after animation
+        if (disableBoundaryClampDuringAnimation && playerMovement != null)
+        {
+            playerMovement.EnableBoundaryClamp();
+            Debug.Log("✅ Boundary clamping re-enabled after entrance animation");
+        }
+        
         Debug.Log($"✅ Entrance animation complete for stage {stageIndex + 1}");
     }
     
     private GameObject FindOrCreateGameObject(string tag, GameObject prefab, string fallbackName)
     {
-        // Try to find existing object by tag
         GameObject obj = GameObject.FindGameObjectWithTag(tag);
         
         if (obj == null && prefab != null)
         {
-            // Create from prefab if no existing object found
             obj = Instantiate(prefab);
             obj.tag = tag;
             Debug.Log($"📦 Created {fallbackName} from prefab: {prefab.name}");
