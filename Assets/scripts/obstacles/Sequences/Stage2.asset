@@ -70,7 +70,7 @@ MonoBehaviour:
     groupDelay: 5
   postStageScripts:
   - {fileID: 11400000, guid: ec498ee11818129438e176a288e56be0, type: 2}
-  stageMusic: {fileID: 8300000, guid: e5a9dd81f7768c4479f40579573f0c4d, type: 3}
+  stageMusic: {fileID: 8300000, guid: 5a191bcc51dfe904f9caf5c192edde92, type: 3}
   musicVolume: 0.7
   loopMusic: 1
   fadeInDuration: 2

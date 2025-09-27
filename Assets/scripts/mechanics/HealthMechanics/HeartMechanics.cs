@@ -8,6 +8,7 @@ public class HeartMechanics : MonoBehaviour
     private bool hasShield;
     private SpriteRenderer sr;
     private float alpha;
+    
 
     [Header("🔊 Audio")]
     [SerializeField] private AudioSource audioSource;

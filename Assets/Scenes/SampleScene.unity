@@ -8484,6 +8484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HeartMechanics
   health: 7
   maxHealth: 7
+  colliderGraze: {fileID: 0}
   audioSource: {fileID: 0}
   damageSound: {fileID: 8300000, guid: b2e634cc01aabaa4d87f3663c8b8f8d8, type: 3}
   damageVolume: 1
